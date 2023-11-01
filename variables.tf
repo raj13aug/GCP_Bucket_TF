@@ -1,4 +1,9 @@
-variable "bucket_name" {
+variable "bucket_name_source" {
+  type        = string
+  description = "The name of our bucket"
+}
+
+variable "bucket_name_destination" {
   type        = string
   description = "The name of our bucket"
 }

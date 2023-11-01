@@ -5,13 +5,6 @@ resource "google_storage_bucket" "source" {
 }
 
 
-resource "google_storage_bucket" "destination" {
-  name          = var.bucket_name_destination
-  storage_class = var.storage_class
-  location      = var.bucket_location
-}
-
-
 resource "null_resource" "upload_folder_content" {
   triggers = {
     file_hashes = jsonencode({

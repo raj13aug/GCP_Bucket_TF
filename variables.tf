@@ -3,11 +3,6 @@ variable "bucket_name_source" {
   description = "The name of our bucket"
 }
 
-variable "bucket_name_destination" {
-  type        = string
-  description = "The name of our bucket"
-}
-
 variable "bucket_location" {
   type    = string
   default = "us-east1"

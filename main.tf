@@ -8,7 +8,7 @@ resource "google_storage_bucket" "source" {
 resource "null_resource" "upload_folder_content" {
   triggers = {
     file_hashes = jsonencode({
-      for fn in fileset(var.folder_path, "**") :
+      for fn in fileset(var.folder_path, "*.jpg") :
       fn => filesha256("${var.folder_path}/${fn}")
     })
   }

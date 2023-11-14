@@ -13,9 +13,10 @@ resource "google_storage_bucket_iam_member" "member" {
 }
 
 resource "null_resource" "upload_folder_content" {
+  depends_on = [google_storage_bucket.source, google_storage_bucket_iam_member.member]
   triggers = {
     file_hashes = jsonencode({
-      for fn in fileset(var.folder_path, "*.jpg") :
+      for fn in fileset(var.folder_path, "**") :
       fn => filesha256("${var.folder_path}/${fn}")
     })
   }

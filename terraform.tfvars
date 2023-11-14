@@ -4,4 +4,4 @@ storage_class = "REGIONAL"
 
 project_id = "mytesting-400910"
 
-folder_path = "./"
+folder_path = "./upload"
